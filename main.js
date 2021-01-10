@@ -2,8 +2,8 @@ var Word = require('./word.js');
 var prompt = require('prompt');
 
 console.log("Welcome to Coding Hangman!");
-console.log("Guess a letter of the name of a technology");
-console.log("Goodluck!");
+console.log("Start guessing the letters for a programming language name,"+
+"\nfor ex: if you are thinking about javascript, then see if j, a, v, etc. leads you to correct way");
 console.log("-----------------------------");
 prompt.start();
 
@@ -33,7 +33,7 @@ game = {
  			var manyGuessed = self.currentWrd.checkLetter(result.guessLet);
 
  			if(manyGuessed ==0) {
- 				console.log("WRONG");
+ 				console.log("Ahh...WRONG!! You are closer to be hanged");
  				self.guessesRemaining--;
  				
  			} else {
@@ -51,7 +51,7 @@ game = {
  				self.promptUser();
  			}
  			else if(self.guessesRemaining ==0){
- 				console.log("Game over. Correct Word ", self.currentWrd.target);
+ 				console.log("You are hanged! Correct Answer was:", self.currentWrd.target);
  			} else {
  				console.log(self.currentWrd.wordRender());
  			}
